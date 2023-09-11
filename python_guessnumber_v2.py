@@ -149,7 +149,7 @@ def main():
             scores.append(f"{player_name}: {attempts + 1} {translation['attempts']}")
             save_scores(scores)
             break
-        elif guess < target_number:
+        if guess < target_number:
             print(translation['too_low'])
         else:
             print(translation['too_high'])
