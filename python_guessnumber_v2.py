@@ -1,3 +1,6 @@
+"""
+La biblioteca random se utiliza para generar números aleatorios.
+"""
 import random
 
 # Diccionario de cadenas de texto en inglés y español
@@ -67,20 +70,36 @@ def get_user_input(prompt, is_integer=True):
             return user_input
 
 def load_scores():
+    """
+    Carga los puntajes desde un archivo llamado "scores.txt" 
+    y los devuelve como una lista de cadenas.
+
+    Returns:
+        list: Una lista de cadenas que representan los puntajes.
+    """
     try:
-        with open("scores.txt", "r") as file:
+        with open("scores.txt", "r", encoding="utf-8") as file:
             scores = file.readlines()
         return scores
     except FileNotFoundError:
         return []
 
 def save_scores(scores):
-    with open("scores.txt", "w") as file:
+    """
+    Guarda una lista de puntajes en un archivo llamado "scores.txt".
+
+    Args:
+        scores (list): Una lista de cadenas que representan los puntajes.
+    """
+    with open("scores.txt", "w", encoding="utf-8") as file:
         for score in scores:
             file.write(score)
 
 
 def main():
+    """
+    Función principal del juego de adivinanza de números.
+    """
     user_language = get_user_language()
     translation = translations[user_language]
 
