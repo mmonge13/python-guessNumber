@@ -13,11 +13,11 @@ translations = {
         'max_attempts_prompt': 'Enter the maximum number of attempts: ',
         'guess_range': 'You are guessing a number between {lower} and {upper}.',
         'max_attempts': 'You have a maximum of {max_attempts} attempts.',
-        'congrats': 'Congratulations! You guessed the number {target_number} in {attempts} attempts.',
+        'congrats': 'Congratulations! You guessed the number {target_number} in {attempts} attempts.', # pylint: disable=line-too-long
         'enter_name': 'Enter your name to save your score: ',
         'too_low': 'Too low. Try again.',
         'too_high': 'Too high. Try again.',
-        'out_of_attempts': "You've exhausted your {max_attempts} attempts. The correct number was {target_number}.",
+        'out_of_attempts': "You've exhausted your {max_attempts} attempts. The correct number was {target_number}.", # pylint: disable=line-too-long
         'top_scores': "\nTop 5 Scores:",
         'invalid_choice': 'Invalid choice. Please select 1 or 2.',
         'guess_prompt': 'Attempt {attempts}: Guess the number: ',
@@ -36,7 +36,7 @@ translations = {
         'enter_name': 'Ingresa tu nombre para guardar tu puntaje: ',
         'too_low': 'Demasiado bajo. Inténtalo de nuevo.',
         'too_high': 'Demasiado alto. Inténtalo de nuevo.',
-        'out_of_attempts': "Has agotado tus {max_attempts} intentos. El número correcto era {target_number}.",
+        'out_of_attempts': "Has agotado tus {max_attempts} intentos. El número correcto era {target_number}.", # pylint: disable=line-too-long
         'top_scores': "\nPuntuaciones Principales:",
         'invalid_choice': 'Elección no válida. Por favor, selecciona 1 o 2.',
         'guess_prompt': 'Intento {attempts}: Adivina el número: ',
@@ -143,7 +143,7 @@ def main():
         guess = get_user_input(translation['guess_prompt'])
 
         if guess == target_number:
-            print(translation['congrats'].format(target_number=target_number, attempts=attempts + 1))
+            print(translation['congrats'].format(target_number=target_number, attempts=attempts + 1)) # pylint: disable=line-too-long
             player_name = get_user_input(translation['enter_name'], is_integer=False)
             scores = load_scores()
             scores.append(f"{player_name}: {attempts + 1} {translation['attempts']}")
@@ -156,7 +156,7 @@ def main():
 
         attempts += 1
     else:
-        print(translation['out_of_attempts'].format(max_attempts=max_attempts, target_number=target_number))
+        print(translation['out_of_attempts'].format(max_attempts=max_attempts, target_number=target_number)) # pylint: disable=line-too-long
 
     print(translation['top_scores'])
     scores = load_scores()

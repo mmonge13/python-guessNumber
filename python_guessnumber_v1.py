@@ -68,14 +68,14 @@ def main():
     attempts = 0
 
     print(
-        f"You are guessing a number between {lower} and {upper}.\nYou have a maximum of {max_attempts} attempts.")
+        f"You are guessing a number between {lower} and {upper}.\nYou have a maximum of {max_attempts} attempts.") # pylint: disable=line-too-long
 
     while attempts < max_attempts:
         guess = get_user_input(f"Attempt {attempts + 1}: Guess the number: ")
 
         if guess == target_number:
             print(
-                f"Congratulations! You guessed the number {target_number} in {attempts + 1} attempts.")
+                f"Congratulations! You guessed the number {target_number} in {attempts + 1} attempts.") # pylint: disable=line-too-long
             player_name = get_user_input(
                 "Enter your name to save your score: ", is_integer=False)
             scores = load_scores()
@@ -90,7 +90,7 @@ def main():
         attempts += 1
     else:
         print(
-            f"You've exhausted your {max_attempts} attempts. The correct number was {target_number}.")
+            f"You've exhausted your {max_attempts} attempts. The correct number was {target_number}.") # pylint: disable=line-too-long
 
     print("\nTop 5 Scores:")
     scores = load_scores()
