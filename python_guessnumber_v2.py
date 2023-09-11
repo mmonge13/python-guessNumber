@@ -46,6 +46,12 @@ translations = {
 }
 
 def get_user_language():
+    """
+    Pregunta al usuario que seleccione su idioma y devuelve el código de idioma correspondiente.
+
+    Returns:
+        str: El código de idioma seleccionado por el usuario ("en" para inglés o "es" para español).
+    """
     print("Select your language / Selecciona tu idioma:")
     print("1. English")
     print("2. Español")
@@ -59,6 +65,17 @@ def get_user_language():
             print(translations['en']['invalid_choice'])
 
 def get_user_input(prompt, is_integer=True):
+    """
+    Solicita una entrada al usuario y opcionalmente la valida como un entero.
+
+    Args:
+        prompt (str): El mensaje que se muestra al usuario.
+        is_integer (bool, optional): Indica si la entrada debe ser un entero. Por defecto, es True.
+
+    Returns:
+        int/str: El valor ingresado por el usuario, convertido a un entero si is_integer es True,
+        de lo contrario, una cadena.
+    """
     while True:
         user_input = input(prompt)
         if is_integer:
